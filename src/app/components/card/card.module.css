@@ -1,0 +1,69 @@
+.card {
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  font-family: inherit;
+  text-align: left;
+  transition: background 200ms, border 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card__button {
+  width: 100%;
+  height: 100%;
+}
+
+.card__button-title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  font-size: 1.25rem;
+}
+
+.card__button-title-icon {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card__button-description {
+  display: inline-block;
+  margin: 0;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .card__button-title-icon:hover {
+    transform: translateX(4px);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .card__button-title-icon:hover {
+    transform: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .card {
+    padding: 1rem 2.5rem;
+  }
+
+  .card__button-title {
+    margin-bottom: 0.5rem;
+  }
+}
